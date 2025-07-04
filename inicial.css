@@ -1,0 +1,76 @@
+/* ===== Body e imagem do logo ===== */
+body {
+  background-color: #D3D3D3;
+  margin: 0;
+  font-family: 'Kantumruy Pro', sans-serif;
+}
+
+
+
+header#cabecalho .logo {
+  width: 200px;
+  margin-right: 1300px;
+  margin-top: -1000px;
+}
+
+/* ===== Títulos ao lado da logo ===== */
+header#cabecalho .titulos h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+header#cabecalho .titulos h2 {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+
+/* ===== Menu arredondado ===== */
+nav#menu {
+  margin-top: 10px;
+  background-color: #dddddd;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: 30px;
+  right: 30px; /* ajusta conforme layout */
+}
+
+nav#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 150px;
+}
+
+nav#menu li {
+  background-color: transparent;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+nav#menu li:hover {
+  background-color: #00BCD4;
+}
+
+nav#menu a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+nav#menu a:hover {
+  color: white;
+}
+
+/* ===== Seções (exemplo) ===== */
+section#corpo {
+  width: 700px;
+  float: left;
+  border-right: 1px solid #606060;
+  padding-right: 15px;
+}
