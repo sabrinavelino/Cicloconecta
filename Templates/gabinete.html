@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabinetes - Ciclo Conecta</title>
+  <link rel="stylesheet" href="../css/padrao.css">
+</head>
+<body>
+  <header id="cabecalho">
+    <div class="header-inner">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo">
+      <hgroup class="titulos">
+        <h1>Ciclo Conecta</h1>
+        <h2>Uma nova maneira de desapegar</h2>
+      </hgroup>
+    </div>
+    <nav id="menu">
+      <ul>
+        <li><a href="perifericos.html">Periféricos</a></li>
+        <li><a href="HD.html">HD</a></li>
+        <li><a href="gabinete.html">Gabinete</a></li>
+        <li><a href="memoria.html">Memória RAM</a></li>
+        <li><a href="fale-conosco.html">Sobre Nós</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar..." id="searchInput">
+      <button onclick="pesquisar()">Buscar</button>
+    </div>
+  </header>
+  <main>
+    <h2>Gabinetes para Reaproveitamento</h2>
+    <p>Dê nova vida ao seu setup com gabinetes sustentáveis e reutilizáveis.</p>
+  </main>
+  <script>
+    function pesquisar() {
+      const termo = document.getElementById("searchInput").value;
+      alert("Você pesquisou por: " + termo);
+    }
+  </script>
+</body>
+</html>

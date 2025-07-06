@@ -11,14 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="inicial.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../css/inicial.css">
 </head>
 <body>
   <div id="interface"> 
     <header id="cabecalho">
       <div class="header-inner">
         <!-- Logo -->
-        <img src="../Imagens/logo.png" alt="Logo Ciclo Conecta" class="logo">
+        <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo">
 
         <!-- Títulos -->
         <hgroup class="titulos">
@@ -46,8 +46,22 @@
             <a href="fale-conosco.html">Sobre Nós</a>
           </li>
         </ul>
+        
       </nav>
+      <div class="search-bar">
+        <input type="text" placeholder="Pesquisar..." id="searchInput">
+        <button onclick="pesquisar()">Buscar</button>
+      </div>
+
     </header>
   </div>
+  <script>
+  function pesquisar() {
+      const termo = document.getElementById("searchInput").value;
+      alert("Você pesquisou por: " + termo);
+      // Aqui você pode implementar uma lógica de redirecionamento ou busca real
+    }
+  </script>
+
 </body>
 </html>
