@@ -1,38 +1,270 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Ciclo Conecta</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ciclo Conecta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+<body>
+<header class="header">
+  <div class="cabecalho1">
+    <div class="logo-titulo">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta">
+      <h1 class="titulo">
+        <span class="azul">Ciclo</span> <strong>Conecta</strong>
+      </h1>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="formulario.html">Cadastre-se</a></li>
+        <li><a href="produto.html">Anunciar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-	</head>
-	<body>
-		<header class="header">
-			<div class="logo-titulo">
-				<img src="../img/logo.png" alt="Logo Ciclo Conecta">
-				
-				<h1 class="titulo"> 
-					<span class="azul"> Ciclo </span> <strong> Conecta </strong>
-				</h1>
-			</div>
-			<nav class="menu">
-				<ul>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="#">Sobre</a></li>
-					<li><a href="#">Contato</a></li>
-				</ul>
-			</nav>
-		</header>	
-		<main class="box">
-			<p class="front-text">A reciclagem é um processo fundamental para a preservação do meio ambiente. <br>
-				Ela consiste em transformar materiais que seriam descartados como lixo em novos produtos,
-				<br>reduzindo o uso de recursos naturais, a poluição e o acúmulo de resíduos nos aterros sanitários. </p>
-		
-		</main>
-	
-	</body>
-	</html>
+<!-- Barra de pesquisa em div separada e mais acima -->
+<div class="barra-pesquisa-wrapper">
+  <div class="search-bar-centralizada">
+    <input type="text" placeholder="Pesquisar...">
+    <button>Buscar</button>
+  </div>
+
+  <nav id="menu">
+        <ul>
+          <li onmouseover="mudafoto('../img/mouse.png')" onmouseout="mudafoto('../img/logo.png')">
+            <a href="perifericos.html">Periféricos</a>
+          </li>
+          <li onmouseover="mudafoto('../Imagens/HD.png')" onmouseout="mudafoto('../Imagens/logo.png')">
+            <a href="HD.html">HD</a>
+          </li>
+          <li onmouseover="mudafoto('../Imagens/gabinete.png')" onmouseout="mudafoto('../Imagens/logo.png')">
+            <a href="gabinete.html">Gabinete</a>
+          </li>
+          <li onmouseover="mudafoto('../Imagens/ram.png')" onmouseout="mudafoto('../Imagens/logo.png')">
+            <a href="memoria.html">Memória RAM</a>
+          </li>
+          <li onmouseover="mudafoto('../Imagens/logo.png')" onmouseout="mudafoto('../Imagens/logo.png')">
+            <a href="fale-conosco.html">Sobre Nós</a>
+          </li>
+        </ul>
+        
+      </nav>
+</div>
+<main class="principal">
+  <section class="card-grid">
+    <!-- Linha 1 -->
+    <div class="card">
+      <div class="card-imagem">
+        <img src="../img/gabinete.png" alt="Mouse Gamer">
+      </div>
+      <div class="card-conteudo">
+        <h3>Mouse Gamer</h3>
+        <p class="preco">R$ 40,00</p>
+        <p class="descricao">Usado, bom estado</p>
+        <p class="localizacao">Natal - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Natal, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(1)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-imagem">
+        <img src="../img/gabinete.png"  alt="Teclado Mecânico">
+      </div>
+      <div class="card-conteudo">
+        <h3>Teclado Mecânico</h3>
+        <p class="preco">R$ 120,00</p>
+        <p class="descricao">Sem LEDs</p>
+        <p class="localizacao">Parnamirim - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Parnamirim, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(2)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-imagem">
+        <img src="../img/gabinete.png" alt="Webcam HD">
+      </div>
+      <div class="card-conteudo">
+        <h3>Webcam HD</h3>
+        <p class="preco">R$ 60,00</p>
+        <p class="descricao">Com microfone</p>
+        <p class="localizacao">Mossoró - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Mossoró, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(3)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Linha 2 -->
+    <div class="card">
+      <div class="card-imagem">
+        <img src="../img/mouse.png" alt="Gabinete Mid Tower">
+      </div>
+      <div class="card-conteudo">
+        <h3>Gabinete Mid Tower</h3>
+        <p class="preco">R$ 100,00</p>
+        <p class="descricao">Com fans RGB</p>
+        <p class="localizacao">Caicó - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Caicó, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(4)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-imagem">
+        <img src="../img/ram.png" alt="Memória RAM 8GB">
+      </div>
+      <div class="card-conteudo">
+        <h3>Memória RAM 8GB</h3>
+        <p class="preco">R$ 75,00</p>
+        <p class="descricao">DDR4, usada</p>
+        <p class="localizacao">Currais Novos - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Currais Novos, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(5)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-imagem">
+        <img src="../img/gabinete.png" alt ="HD 1TB">
+      </div>
+      <div class="card-conteudo">
+        <h3>HD 1TB</h3>
+        <p class="preco">R$ 90,00</p>
+        <p class="descricao">Testado, funcionando</p>
+        <p class="localizacao">Assu - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Assu, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(6)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Linha 3 -->
+    <div class="card">
+      <div class="card-imagem">
+        <img src="../img/mouse.png" alt="Monitor 19 VGA">
+      </div>
+      <div class="card-conteudo">
+        <h3>Monitor 19" VGA</h3>
+        <p class="preco">R$ 150,00</p>
+        <p class="descricao">Com cabo incluso</p>
+        <p class="localizacao">Macau - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Macau, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(7)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-imagem">
+         <img src="../img/mouse.png" alt="Monitor 19 VGA">
+      </div>
+      <div class="card-conteudo">
+        <h3>Fonte 500W</h3>
+        <p class="preco">R$ 85,00</p>
+        <p class="descricao">Selada</p>
+        <p class="localizacao">Santa Cruz - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Santa Cruz, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(8)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-imagem">
+         <img src="../img/mouse.png" alt="Monitor 19 VGA">
+      </div>
+      <div class="card-conteudo">
+        <h3>Switch HDMI</h3>
+        <p class="preco">R$ 30,00</p>
+        <p class="descricao">3 entradas</p>
+        <p class="localizacao">Ceará-Mirim - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Ceará-Mirim, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(9)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+	<div class="card">
+      <div class="card-imagem">
+         <img src="../img/mouse.png" alt="Monitor 19 VGA">
+      </div>
+      <div class="card-conteudo">
+        <h3>Switch HDMI</h3>
+        <p class="preco">R$ 30,00</p>
+        <p class="descricao">3 entradas</p>
+        <p class="localizacao">Ceará-Mirim - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Ceará-Mirim, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(9)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+	<div class="card">
+      <div class="card-imagem">
+         <img src="../img/mouse.png" alt="Monitor 19 VGA">
+      </div>
+      <div class="card-conteudo">
+        <h3>Switch HDMI</h3>
+        <p class="preco">R$ 30,00</p>
+        <p class="descricao">3 entradas</p>
+        <p class="localizacao">Ceará-Mirim - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Ceará-Mirim, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(9)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+	<div class="card">
+      <div class="card-imagem">
+         <img src="../img/mouse.png" alt="Monitor 19 VGA">
+      </div>
+      <div class="card-conteudo">
+        <h3>Switch HDMI</h3>
+        <p class="preco">R$ 30,00</p>
+        <p class="descricao">3 entradas</p>
+        <p class="localizacao">Ceará-Mirim - RN</p>
+        <div class="card-botoes">
+          <button class="btn-mapa" onclick="abrirMapa('Ceará-Mirim, RN')">Ver no mapa</button>
+          <button class="btn-detalhes" onclick="abrirDetalhes(9)">Ver detalhes</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<script>
+  function abrirMapa(localizacao) {
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(localizacao)}`;
+    window.open(url, '_blank');
+  }
+  
+  function abrirDetalhes(idProduto) {
+    // Implemente a lógica para abrir os detalhes do produto
+    // Pode ser um modal ou redirecionamento para outra página
+    console.log(`Abrindo detalhes do produto ${idProduto}`);
+    // Exemplo: window.location.href = `detalhes.html?id=${idProduto}`;
+  }
+</script>
+</body>
+</html>

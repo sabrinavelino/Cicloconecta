@@ -1,0 +1,64 @@
+body {
+  background-color: #D3D3D3;
+  margin: 0;
+  font-family: 'Kantumruy Pro', sans-serif;
+}
+
+.logo {
+  width: 100px;
+  margin-left: 5.5%;
+  margin-top: 7px;
+}
+
+.titulos h1 {
+  margin: 0;
+  font-size: 2rem;
+  margin-left: 3%;
+}
+
+.titulos h2 {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin-left: 3%;
+}
+.formulario-anuncio {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  color: #333;
+}
+.formulario-anuncio h2 {
+  text-align: center;
+  color: #00BCD4;
+}
+.formulario-anuncio form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.formulario-anuncio input,
+.formulario-anuncio textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.formulario-anuncio button {
+  background-color: #00BCD4;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.formulario-anuncio button:hover {
+  background-color: #008C9E;
+}

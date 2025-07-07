@@ -1,144 +1,348 @@
-body{
-	
-	margin: 0;
-	background-image: url('../img/back2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	position: relative;
+body {
+  margin: 0;
+  background-image: url('../img/back2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Kantumruy Pro", sans-serif;
+  padding-top: 180px; /* Espaço para cabeçalho e barra de pesquisa */
+  padding-bottom: 40px;
 }
+
 body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.3); /* 30% preto */
-    z-index: 0;
-    pointer-events: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  pointer-events: none;
 }
+
 body > * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
-
-
 
 .header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 40px 0 40px;
-    box-sizing: border-box;
-    background: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
-.menu ul {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.menu a {
-    background: #6DBE98;
-    color: #fff;
-    padding: 10px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    transition: background 0.2s, box-shadow 0.2s;
-    font-family: "Kantumruy Pro", sans-serif;
-    font-size: 18px;
-    letter-spacing: 1px;
-}
-
-.menu a:hover {
-    background: #57a87e;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.22);
-}
-h1 {
-	font-family: sans-serif;
-	font-size: 40px;
-	text-align: center;
-	color: grey;
-
-}
-h2{
-
-	font-family: sans-serif;
-	font:20px;
-	color:#4682B4;
-	text-align: center;
-}
-
-.container{
-	text-align: center;
-}
-.bemvindo{
-	font-family: "Kantumruy Pro", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 30px;
-  text-align: center;
+.cabecalho1 {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  padding: 0 40px;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 
 .logo-titulo {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* Espaço entre logo e título */
-}
-.logo-titulo img {
-    height: 70px;
-    width: auto;
-    display: block;
-    margin: 0;
-}
-.logo-titulo .titulo {
-    margin: 0;
-    font-size: 32px;
-}
-.titulo{
-	font-size: 40px;
-	margin: 20px 0  30px;
-
-}
-.titulo .azul{
-	color: #00BCD4;
-	font-weight: bold;
-}
-.botao{
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-}
-button{
-	background-color: #00BCD4;
-	color:white;
-	border: none;
-	padding: 10px 20px;
-	font-weight: bold;
-	cursor: pointer;
-	border-radius: 4px;
-	transition: background 0.35;
-}
-button:hover{
-	background-color: #008C9E;
-
-}
-.frase{
-  font-family: "Kantumruy Pro", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 30px;
+  display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.logo-titulo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo-titulo .titulo {
+  margin: 0;
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+}
+
+.titulo .azul {
+  color: #00BCD4;
+  font-weight: bold;
+}
+
+.menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  background-color: #00BCD4;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s, box-shadow 0.2s;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.menu a:hover {
+  background: #57a87e;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* Barra de pesquisa */
+.barra-pesquisa-wrapper {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar-centralizada {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar-centralizada input {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 500px;
+  font-size: 16px;
+}
+
+.search-bar-centralizada button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #00BCD4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-bar-centralizada button:hover {
+  background-color: #008C9E;
+}
+
+
+.search-bar-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+.principal {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-imagem {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.card-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card:hover .card-imagem img {
+  transform: scale(1.03);
+}
+
+.card-conteudo {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.preco {
+  color: #00BCD4;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0 0 6px;
+}
+
+.descricao {
+  color: #666;
+  font-size: 13px;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.localizacao {
+  color: #888;
+  font-size: 12px;
+  margin: 0 0 12px;
+  font-style: italic;
+}
+
+.card-botoes {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn-mapa, .btn-detalhes {
+  flex: 1;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  font-size: 12px;
+}
+
+.btn-mapa {
+  background-color: #6DBE98;
+  color: white;
+}
+
+.btn-mapa:hover {
+  background-color: #57a87e;
+}
+
+.btn-detalhes {
+  background-color: #00BCD4;
+  color: white;
+}
+
+.btn-detalhes:hover {
+  background-color: #008C9E;
+}
+
+
+
+
+
+
+nav#menu {
+  margin-left: auto; /* Empurra o menu para a direita */
+  padding: 5px 0;
+}
+
+nav#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px; /* Reduzi o gap para ficar mais compacto */
+}
+
+nav#menu li {
+  background-color: transparent;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+nav#menu li:hover {
+  background-color: #00BCD4;
+}
+
+nav#menu a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
+nav#menu a:hover {
+  color: white;
+}
+
+
+/* Layout responsivo */
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 cards por linha em telas grandes */
+  }
+}
+
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* 1 card por linha em mobile */
+  }
+  
+  .card-imagem {
+    height: 140px;
+  }
+  
+  .card-botoes {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .btn-mapa, .btn-detalhes {
+    width: 100%;
+  }
 }
