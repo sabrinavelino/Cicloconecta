@@ -109,20 +109,20 @@ body > * {
 }
 
 .search-bar-centralizada {
-  position: absolute;
-  left: 50%;
+  position: flex;
+  left: 80%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 30px;
 }
 
 .search-bar-centralizada input {
-  padding: 10px 15px;
-  border-radius: 6px;
+  padding: 20px 150px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   width: 100%;
   max-width: 500px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .search-bar-centralizada button {
@@ -147,7 +147,7 @@ body > * {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 50px;
   position: relative;
 }
 .principal {
@@ -345,4 +345,46 @@ nav#menu a:hover {
   .btn-mapa, .btn-detalhes {
     width: 100%;
   }
+}
+.conteudo-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2px;
+  padding: 100px 20px;
+  max-width: 100%;
+}
+
+
+.logo-e-frase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-banner {
+  width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.frase-digitada {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  color: #00BCD4;
+  animation: blink 1.0s steps(1) infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

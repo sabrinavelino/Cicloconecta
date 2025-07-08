@@ -3,35 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabinetes - Ciclo Conecta</title>
+  <title>Memória RAM - Ciclo Conecta</title>
   <link rel="stylesheet" href="../css/padrao.css">
 </head>
 <body>
   <header id="cabecalho">
-    <div class="header-inner">
-      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo">
+  <div class="header-inner">
+    <div class="logo-titulo">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo" link="main.html">
       <hgroup class="titulos">
         <h1>Ciclo Conecta</h1>
         <h2>Uma nova maneira de desapegar</h2>
       </hgroup>
     </div>
-    <nav id="menu">
-      <ul>
-        <li><a href="perifericos.html">Periféricos</a></li>
-        <li><a href="HD.html">HD</a></li>
-        <li><a href="gabinete.html">Gabinete</a></li>
-        <li><a href="memoria.html">Memória RAM</a></li>
-        <li><a href="fale-conosco.html">Sobre Nós</a></li>
-      </ul>
-    </nav>
-    <div class="search-bar">
-      <input type="text" placeholder="Pesquisar..." id="searchInput">
-      <button onclick="pesquisar()">Buscar</button>
+
+    <div class="nav-search-wrapper">
+      <nav id="menu">
+        <ul>
+          <li><a href="perifericos.html">Periféricos</a></li>
+          <li><a href="HD.html">HD</a></li>
+          <li><a href="gabinete.html">Gabinete</a></li>
+          <li><a href="memoria.html">Memória RAM</a></li>
+          <li><a href="fale-conosco.html">Sobre Nós</a></li>
+        </ul>
+      </nav>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Pesquisar..." id="searchInput">
+        <button onclick="pesquisar()">Buscar</button>
+      </div>
     </div>
-  </header>
+  </div>
+</header>
   <main>
     <h2>Gabinetes para Reaproveitamento</h2>
     <p>Dê nova vida ao seu setup com gabinetes sustentáveis e reutilizáveis.</p>
+    <section class="lista-produtos">
+      <div class="produto-item">
+        <img src="../img/ram2.jpg" alt="Memória RAM 2">
+        <div class="info-produto">
+          <h3>RAM DDR3 4GB</h3>
+          <p class="preco">R$ 60,00</p>
+          <p class="localizacao">São Paulo - SP</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="produto-item">
+        <img src="../img/ram3.jpg" alt="Memória RAM 3">
+        <div class="info-produto">
+          <h3>RAM DDR3 8GB</h3>
+          <p class="preco">R$ 90,00</p>
+          <p class="localizacao">Campinas - SP</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="produto-item">
+        <img src="../img/ram4.jpg" alt="Memória RAM 4">
+        <div class="info-produto">
+          <h3>RAM DDR4 8GB</h3>
+          <p class="preco">R$ 120,00</p>
+          <p class="localizacao">Rio de Janeiro - RJ</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="produto-item">
+        <img src="../img/ram4.jpg" alt="Memória RAM 4 (Versão 2)">
+        <div class="info-produto">
+          <h3>RAM DDR4 16GB</h3>
+          <p class="preco">R$ 180,00</p>
+          <p class="localizacao">Belo Horizonte - MG</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+    </section>
   </main>
   <script>
     function pesquisar() {

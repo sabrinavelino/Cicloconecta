@@ -30,31 +30,22 @@
 
 <!-- Barra de pesquisa em div separada e mais acima -->
 <div class="barra-pesquisa-wrapper">
-  <div class="search-bar-centralizada">
-    <input type="text" placeholder="Pesquisar...">
-    <button>Buscar</button>
+  <div class="conteudo-banner">
+    <div class="logo-e-frase">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo-banner">
+      <h2 class="frase-digitada">
+        <span id="texto-dinamico"></span><span class="cursor">|</span>
+      </h2>
+    </div>
+    <br>
+    <div class="search-bar-centralizada">
+      <input type="text" placeholder="Pesquisar...">
+      <button>Buscar</button>
+    </div>
   </div>
+</div>
 
-  <nav id="menu">
-        <ul>
-          <li onmouseover="mudafoto('../img/mouse.png')" onmouseout="mudafoto('../img/logo.png')">
-            <a href="perifericos.html">Periféricos</a>
-          </li>
-          <li onmouseover="mudafoto('../Imagens/HD.png')" onmouseout="mudafoto('../Imagens/logo.png')">
-            <a href="HD.html">HD</a>
-          </li>
-          <li onmouseover="mudafoto('../Imagens/gabinete.png')" onmouseout="mudafoto('../Imagens/logo.png')">
-            <a href="gabinete.html">Gabinete</a>
-          </li>
-          <li onmouseover="mudafoto('../Imagens/ram.png')" onmouseout="mudafoto('../Imagens/logo.png')">
-            <a href="memoria.html">Memória RAM</a>
-          </li>
-          <li onmouseover="mudafoto('../Imagens/logo.png')" onmouseout="mudafoto('../Imagens/logo.png')">
-            <a href="fale-conosco.html">Sobre Nós</a>
-          </li>
-        </ul>
-        
-      </nav>
+
 </div>
 <main class="principal">
   <section class="card-grid">
@@ -265,6 +256,21 @@
     console.log(`Abrindo detalhes do produto ${idProduto}`);
     // Exemplo: window.location.href = `detalhes.html?id=${idProduto}`;
   }
+</script>
+<script>
+  const texto = "Uma nova maneira de desapegar";
+  const textoElemento = document.getElementById("texto-dinamico");
+  let index = 0;
+
+  function digitarTexto() {
+    if (index < texto.length) {
+      textoElemento.innerHTML += texto.charAt(index);
+      index++;
+      setTimeout(digitarTexto, 100); // velocidade da digitação
+    }
+  }
+
+  window.onload = digitarTexto;
 </script>
 </body>
 </html>
