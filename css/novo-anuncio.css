@@ -1,0 +1,94 @@
+body {
+  background-color: #D3D3D3;
+  margin: 0;
+  font-family: 'Kantumruy Pro', sans-serif;
+}
+
+.logo {
+  width: 100px;
+  margin-left: 5.5%;
+  margin-top: 7px;
+}
+
+.titulos h1 {
+  margin: 0;
+  font-size: 2rem;
+  margin-left: 3%;
+}
+
+.titulos h2 {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin-left: 3%;
+}
+
+.novo-anuncio {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.novo-anuncio h2 {
+  text-align: center;
+  color: #00BCD4;
+  margin-bottom: 30px;
+}
+
+.novo-anuncio form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.novo-anuncio input,
+.novo-anuncio textarea,
+.novo-anuncio select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.tipo-negociacao {
+  display: flex;
+  gap: 20px;
+}
+
+.tipo-negociacao label {
+  font-weight: bold;
+}
+
+.novo-anuncio button {
+  background-color: #00BCD4;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.novo-anuncio button:hover {
+  background-color: #008C9E;
+}
+
+.voltar {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #00BCD4;
+  font-weight: bold;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}

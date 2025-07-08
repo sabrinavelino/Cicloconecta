@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nós - Ciclo Conecta</title>
-  <link rel="stylesheet" href="../css/perfil.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil - Ciclo Conecta</title>
+  <link rel="stylesheet" href="../css/perfil.css" />
 </head>
 <body>
   <header id="cabecalho">
     <div class="header-inner">
-      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo" />
       <hgroup class="titulos">
         <h1>Ciclo Conecta</h1>
         <h2>Uma nova maneira de desapegar</h2>
       </hgroup>
-      
-      <h2> Meu perfil</h2>
     </div>
-    
   </header>
-  
+
+  <main class="formulario-anuncio">
+    <h2>Meu Perfil</h2>
+    
+    <!-- Foto e nome -->
+    <div class="perfil-topo">
+      <img src="../img/foto-perfil.png" alt="Foto do usuário" class="foto-perfil" />
+      <div class="info-basica">
+        <h3>João da Silva</h3>
+        <p>Email: joao@email.com</p>
+        <p>Telefone: (11) 90000-0000</p>
+      </div>
+    </div>
+
+    <!-- Estatísticas do usuário -->
+    <div class="estatisticas">
+      <div><strong>12</strong> Anúncios ativos</div>
+      <div><strong>7</strong> Vendidos</div>
+      <div><strong>4.8 ★</strong> Avaliação média</div>
+    </div>
+
+    <!-- Ações -->
+    <div class="acoes-perfil">
+      <button onclick="window.location.href='editar-perfil.html'">Editar Perfil</button>
+      <button onclick="window.location.href='meus-anuncios.html'">Meus Anúncios</button>
+      <button onclick="window.location.href='novo-anuncio.html'">Criar Novo Anúncio</button>
+    </div>
+
+
+    
+  </main>
 </body>
 </html>

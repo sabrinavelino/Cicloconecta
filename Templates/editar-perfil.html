@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editar Perfil - Ciclo Conecta</title>
+  <link rel="stylesheet" href="../css/perfil.css" />
+  <style>
+    .pagina-editar {
+      background: rgba(255, 255, 255, 0.97);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 700px;
+      margin: 40px auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .pagina-editar h2 {
+      text-align: center;
+      color: #00BCD4;
+      margin-bottom: 30px;
+    }
+
+    .pagina-editar form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pagina-editar input,
+    .pagina-editar textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .pagina-editar button {
+      background-color: #00BCD4;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .pagina-editar button:hover {
+      background-color: #008C9E;
+    }
+
+    .voltar {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #00BCD4;
+      font-weight: bold;
+    }
+
+    .voltar:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header id="cabecalho">
+    <div class="header-inner">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo" />
+      <hgroup class="titulos">
+        <h1>Ciclo Conecta</h1>
+        <h2>Uma nova maneira de desapegar</h2>
+      </hgroup>
+    </div>
+  </header>
+
+  <main class="pagina-editar">
+    <h2>Editar Perfil</h2>
+    <form action="#" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="João da Silva" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="joao@email.com" required />
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" value="(11) 90000-0000" />
+
+      <label for="bio">Sobre você:</label>
+      <textarea id="bio" name="bio" rows="4">Sou apaixonado por tecnologia e sustentabilidade.</textarea>
+
+      <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <a class="voltar" href="perfil.html">← Voltar para o perfil</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Novo Anúncio - Ciclo Conecta</title>
+  <link rel="stylesheet" href="../css/novo-anuncio.css" />
+</head>
+<body>
+  <header id="cabecalho">
+    <div class="header-inner">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo" />
+      <hgroup class="titulos">
+        <h1>Ciclo Conecta</h1>
+        <h2>Uma nova maneira de desapegar</h2>
+      </hgroup>
+    </div>
+  </header>
+
+  <main class="novo-anuncio">
+    <h2>Criar Novo Anúncio</h2>
+
+    <form action="#" method="POST" enctype="multipart/form-data">
+      <label for="titulo">Título do anúncio:</label>
+      <input type="text" id="titulo" name="titulo" required />
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" rows="5" required></textarea>
+
+      <label for="preco">Preço (R$):</label>
+      <input type="number" id="preco" name="preco" min="0" step="0.01" />
+
+      <label for="categoria">Categoria:</label>
+      <select id="categoria" name="categoria" required>
+        <option value="">Selecione</option>
+        <option value="eletronicos">Eletrônicos</option>
+        <option value="moveis">Móveis</option>
+        <option value="veiculos">Veículos</option>
+        <option value="roupas">Roupas</option>
+        <option value="outros">Outros</option>
+      </select>
+
+      <label for="tipo">Tipo de negociação:</label>
+      <div class="tipo-negociacao">
+        <label><input type="radio" name="tipo" value="venda" checked /> Venda</label>
+        <label><input type="radio" name="tipo" value="troca" /> Troca</label>
+        <label><input type="radio" name="tipo" value="ambos" /> Venda ou Troca</label>
+      </div>
+
+      <div id="trocaInfo" style="display: none;">
+        <label for="desejo">O que você aceita na troca?</label>
+        <textarea id="desejo" name="desejo" rows="3" placeholder="Ex: Aceito bicicleta ou celular..."></textarea>
+      </div>
+
+      <label for="fotos">Fotos do produto:</label>
+      <input type="file" id="fotos" name="fotos[]" multiple accept="image/*" />
+
+      <button type="submit">Publicar Anúncio</button>
+    </form>
+
+    <a class="voltar" href="perfil.html">← Voltar para o perfil</a>
+  </main>
+
+  <script>
+    const tipoRadios = document.getElementsByName('tipo');
+    const trocaInfo = document.getElementById('trocaInfo');
+
+    tipoRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === 'troca' || radio.value === 'ambos') {
+          trocaInfo.style.display = 'block';
+        } else {
+          trocaInfo.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

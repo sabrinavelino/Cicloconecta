@@ -62,3 +62,129 @@ body {
 .formulario-anuncio button:hover {
   background-color: #008C9E;
 }
+
+.perfil-topo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.foto-perfil {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00BCD4;
+}
+
+.info-basica h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.estatisticas {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  font-size: 1rem;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.estatisticas div {
+  text-align: center;
+}
+
+.acoes-perfil {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acoes-perfil button {
+  flex: 1;
+  background-color: #00BCD4;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.acoes-perfil button:hover {
+  background-color: #008C9E;
+}
+/* Modal tela cheia */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Conteúdo do modal */
+.modal-conteudo {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Botão de fechar */
+.fechar {
+  color: #aaa;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover {
+  color: #000;
+}
+
+.modal-conteudo form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-conteudo input,
+.modal-conteudo textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-conteudo button {
+  background-color: #00BCD4;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-conteudo button:hover {
+  background-color: #008C9E;
+}
