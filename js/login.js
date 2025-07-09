@@ -6,6 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   const msg = document.getElementById("mensagem");
 
   if (usuario === "" || senha === "") {
+    msg.style.color = "red";
     msg.textContent = "Preencha todos os campos.";
     return;
   }
@@ -14,10 +15,12 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   if (usuario === "admin" && senha === "1234") {
     msg.style.color = "green";
     msg.textContent = "Login bem-sucedido!";
-    // redirecionar após 1 segundo
+    
+    // Redireciona para perfil.html após 1 segundo
     setTimeout(() => {
-      window.location.href = "main.html";
+      window.location.href = "perfil.html";
     }, 1000);
+
   } else {
     msg.style.color = "red";
     msg.textContent = "Usuário ou senha incorretos.";

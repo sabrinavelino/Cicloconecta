@@ -188,3 +188,10 @@ body {
 .modal-conteudo button:hover {
   background-color: #008C9E;
 }
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 12px;
+}

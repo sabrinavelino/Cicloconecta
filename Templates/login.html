@@ -11,13 +11,15 @@
   <header class="header">
   <div class="cabecalho1">
     <div class="logo-titulo">
-      <img src="../img/logo.png" alt="Logo Ciclo Conecta">
-      <h1 class="titulo">
-        <span class="azul">Ciclo</span> <strong>Conecta</strong>
-      </h1>
-    </div>
-    </div>
-  </header>
+      <a href="main.html" class="logo-link">
+        <img src="../img/logo.png" alt="Logo Ciclo Conecta">
+        <h1 class="titulo">
+          <span class="azul">Ciclo</span> <strong>Conecta</strong>
+        </h1>
+      </a>
+    </div> <!-- fecha logo-titulo -->
+  </div> <!-- fecha cabecalho1 -->
+</header>
 <div class="form-container">
     <h1>Faça seu login</h1>
     <form id="loginForm">
@@ -28,8 +30,9 @@
       <input type="password" id="senha" name="senha" required>
 
       <button type="submit">Entrar</button>
+       <div id="mensagem"></div>
     </form>
-    <p id="mensagem"></p>
+    
   </div>
   
 
