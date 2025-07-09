@@ -1,199 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ciclo Conecta</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" type="text/css" href="../css/main.css" />
-  <style>
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .card-link .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card-link:hover .card {
-      transform: scale(1.02);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    .card-botoes a.btn-detalhes,
-    .card-botoes button.btn-mapa {
-      background-color: #00bcd4;
-      color: white;
-      padding: 8px 12px;
-      font-size: 0.9rem;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-block;
-      margin-right: 5px;
-    }
-    .card-botoes a.btn-detalhes:hover,
-    .card-botoes button.btn-mapa:hover {
-      background-color: #008c9e;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> HD - Ciclo Conecta</title>
+  <link rel="stylesheet" href="../css/padrao.css">
 </head>
 <body>
-  <header class="header">
-    <div class="cabecalho1">
-      <div class="logo-titulo">
-        <img src="../img/logo.png" alt="Logo Ciclo Conecta" />
-        <h1 class="titulo">
-          <span class="azul">Ciclo</span> <strong>Conecta</strong>
-        </h1>
-      </div>
-      <nav class="menu">
+  <header id="cabecalho">
+  <div class="header-inner">
+    <div class="logo-titulo">
+      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo" link="main.html">
+      <hgroup class="titulos">
+        <h1>Ciclo Conecta</h1>
+        <h2>Uma nova maneira de desapegar</h2>
+      </hgroup>
+    </div>
+
+    <div class="nav-search-wrapper">
+      <nav id="menu">
         <ul>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="cadastro.html">Cadastre-se</a></li>
-          <li><a href="novo-anuncio.html">Anunciar</a></li>
+          <li><a href="perifericos.html">Periféricos</a></li>
+          <li><a href="HD.html">HD</a></li>
+          <li><a href="gabinete.html">Gabinete</a></li>
+          <li><a href="memoria.html">Memória RAM</a></li>
+          <li><a href="fale-conosco.html">Sobre Nós</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
 
-  <!-- Barra de pesquisa em div separada e mais acima -->
-  <div class="barra-pesquisa-wrapper">
-    <div class="conteudo-banner">
-      <div class="logo-e-frase">
-        <img
-          src="../img/logo.png"
-          alt="Logo Ciclo Conecta"
-          class="logo-banner"
-        />
-        <h2 class="frase-digitada">
-          <span id="texto-dinamico"></span><span class="cursor">|</span>
-        </h2>
-      </div>
-      <br />
-      <div class="search-bar-centralizada">
-        <input type="text" placeholder="Pesquisar..." />
-        <button>Buscar</button>
+      <div class="search-bar">
+        <input type="text" placeholder="Pesquisar..." id="searchInput">
+        <button onclick="pesquisar()">Buscar</button>
       </div>
     </div>
   </div>
-
-  <main class="principal">
-    <section class="card-grid">
-      <!-- Gabinete Mid Tower -->
-      <a href="gabinete.html" class="card-link">
-        <div class="card">
-          <div class="card-imagem">
-            <img src="../img/mouse.png" alt="Gabinete Mid Tower" />
-          </div>
-          <div class="card-conteudo">
-            <h3>Gabinete Mid Tower</h3>
-            <p class="preco">R$ 100,00</p>
-            <p class="descricao">Com fans RGB</p>
-            <p class="localizacao">Caicó - RN</p>
-            <div class="card-botoes">
-              <button
-                class="btn-mapa"
-                onclick="abrirMapa('Caicó, RN'); event.stopPropagation();"
-              >
-                Ver no mapa
-              </button>
-              <a href="gabinete.html" class="btn-detalhes" onclick="event.stopPropagation();">Ver detalhes</a>
-            </div>
-          </div>
+</header>
+  <main>
+    <h2>HD </h2>
+    <p>Dê um up no seu armazenamento  </p>
+    <section class="lista-produtos">
+      <div class="produto-item">
+        <img src="../img/HD.png" alt="Memória RAM 2">
+        <div class="info-produto">
+          <h3>HD 500 GB </h3>
+          <p class="preco">R$ 100,00</p>
+          <p class="localizacao">Natal - RN</p>
+          <button>Ver mais</button>
         </div>
-      </a>
+      </div>
 
-      <!-- Memória RAM 8GB -->
-      <a href="memoria.html" class="card-link">
-        <div class="card">
-          <div class="card-imagem">
-            <img src="../img/ram.png" alt="Memória RAM 8GB" />
-          </div>
-          <div class="card-conteudo">
-            <h3>Memória RAM 8GB</h3>
-            <p class="preco">R$ 75,00</p>
-            <p class="descricao">DDR4, usada</p>
-            <p class="localizacao">Currais Novos - RN</p>
-            <div class="card-botoes">
-              <button
-                class="btn-mapa"
-                onclick="abrirMapa('Currais Novos, RN'); event.stopPropagation();"
-              >
-                Ver no mapa
-              </button>
-              <a href="memoria.html" class="btn-detalhes" onclick="event.stopPropagation();">Ver detalhes</a>
-            </div>
-          </div>
+      <div class="produto-item">
+        <img src="../img/hd1.png" alt="Memória RAM 3">
+        <div class="info-produto">
+          <h3>HD kingston 2 TB</h3>
+          <p class="preco">R$ 400,00</p>
+          <p class="localizacao">Parnamirim - RN</p>
+          <button>Ver mais</button>
         </div>
-      </a>
+      </div>
 
-      <!-- HD 1TB -->
-      <a href="hd.html" class="card-link">
-        <div class="card">
-          <div class="card-imagem">
-            <img src="../img/gabinete.png" alt="HD 1TB" />
-          </div>
-          <div class="card-conteudo">
-            <h3>HD 1TB</h3>
-            <p class="preco">R$ 90,00</p>
-            <p class="descricao">Testado, funcionando</p>
-            <p class="localizacao">Assu - RN</p>
-            <div class="card-botoes">
-              <button
-                class="btn-mapa"
-                onclick="abrirMapa('Assu, RN'); event.stopPropagation();"
-              >
-                Ver no mapa
-              </button>
-              <a href="hd.html" class="btn-detalhes" onclick="event.stopPropagation();">Ver detalhes</a>
-            </div>
-          </div>
+      <div class="produto-item">
+        <img src="../img/HD2.jpeg" alt="Memória RAM 4">
+        <div class="info-produto">
+          <h3>HD 500GB</h3>
+          <p class="preco">R$ 350,00</p>
+          <p class="localizacao">Natal - RN</p>
+          <button>Ver mais</button>
         </div>
-      </a>
+      </div>
 
-      <!-- Outros cards aqui (opcional) -->
-      <!-- Você pode repetir o mesmo padrão com href para outras páginas -->
+      <div class="produto-item">
+        <img src="../img/HD4.png" alt="Memória RAM 4 (Versão 2)">
+        <div class="info-produto">
+          <h3>HD 4 TB</h3>
+          <p class="preco">R$ 900</p>
+          <p class="localizacao">São josé de mipibu - RN</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
     </section>
   </main>
-
-  <footer class="rodape">
-    <div class="rodape-conteudo">
-      <p>&copy; 2025 Ciclo Conecta. Todos os direitos reservados.</p>
-      <p>
-        Contato:
-        <a href="mailto:contato@cicloconecta.com">contato@cicloconecta.com</a>
-      </p>
-      <p>Telefone: (84) 90000-0000</p>
-    </div>
-  </footer>
-
   <script>
-    function abrirMapa(localizacao) {
-      const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        localizacao
-      )}`;
-      window.open(url, "_blank");
+    function pesquisar() {
+      const termo = document.getElementById("searchInput").value;
+      alert("Você pesquisou por: " + termo);
     }
-
-    const texto = "Uma nova maneira de desapegar";
-    const textoElemento = document.getElementById("texto-dinamico");
-    let index = 0;
-
-    function digitarTexto() {
-      if (index < texto.length) {
-        textoElemento.innerHTML += texto.charAt(index);
-        index++;
-        setTimeout(digitarTexto, 100); // velocidade da digitação
-      }
-    }
-
-    window.onload = digitarTexto;
   </script>
 </body>
 </html>
