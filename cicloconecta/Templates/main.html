@@ -1,3 +1,4 @@
+{% load static %} 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,8 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../css/main.css" />
-</head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+ 
+  
+    </head>
 <body>
 <header class="header">
   <div class="cabecalho1">
@@ -20,16 +23,25 @@
     </div>
     <nav class="menu">
       <ul>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="cadastro.html">Cadastre-se</a></li>
-        <li><a href="novo-anuncio.html">Anunciar</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+        <li><a href="cadastro.html">CADASTRE-SE</a></li>
+        <li><a href="novo-anuncio.html">ANUNCIAR</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- Barra de pesquisa em div separada e mais acima -->
 <div class="barra-pesquisa-wrapper">
+   <div class="nav-search-wrapper">
+      <nav class="menu">
+        <ul>
+          <li><a href="perifericos.html">PERÍFERICOS</a></li>
+          <li><a href="HD.html">HD</a></li>
+          <li><a href="gabinete.html">GABINETE</a></li>
+          <li><a href="memoria.html">MEMÓRIA </a></li>
+        
+        </ul>
+      </nav>
   <div class="conteudo-banner">
     <div class="logo-e-frase">
       <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo-banner">
@@ -42,31 +54,35 @@
       <input type="text" placeholder="Pesquisar...">
       <button>Buscar</button>
     </div>
+    
   </div>
+  
 </div>
+ </div>
 
-
-</div>
-<main class="principal">
-  <section class="card-grid">
-    <!-- Linha 1 -->
-    <div class="card">
-      <div class="card-imagem">
-        <img src="../img/gabinete.png" alt="Mouse Gamer">
-      </div>
-      <div class="card-conteudo">
-        <h3>Gabinete </h3>
-        <p class="preco">R$ 100,00</p>
-        <p class="descricao">Usado, bom estado</p>
-        <p class="localizacao">Natal - RN</p>
-        <div class="card-botoes">
-          <button class="btn-mapa" onclick="abrirMapa('Natal, RN')">Ver no mapa</button>
-          <button class="btn-detalhes" onclick="abrirDetalhes(1)">Ver detalhes</button>
+<!-- Carrossel de cards -->
+<div class="carousel-wrapper">
+  <button class="carousel-btn left">◀️</button>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      
+      <!-- Cole aqui todos os cards existentes -->
+      <div class="card">
+        <div class="card-imagem">
+          <img src="../img/gabinete.png" alt="Gabinete"> 
+        </div>
+        <div class="card-conteudo">
+          <h3>Gabinete</h3>
+          <p class="preco">R$ 100,00</p>
+          <p class="descricao">Usado, bom estado</p>
+          <p class="localizacao">Natal - RN</p>
+          <div class="card-botoes">
+            <button class="btn-mapa" onclick="abrirMapa('Natal, RN')">Ver no mapa</button>
+            <button class="btn-detalhes" onclick="abrirDetalhes(1)">Ver detalhes</button>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <div class="card">
+ <div class="card">
       <div class="card-imagem">
         <img src="../img/teclado2.png"  alt="Teclado Mecânico">
       </div>
@@ -225,6 +241,7 @@
         </div>
       </div>
     </div>
+
 	<div class="card">
       <div class="card-imagem">
          <img src="../img/teclado1.jpg" alt="Monitor 19 VGA">
@@ -238,36 +255,38 @@
           <button class="btn-mapa" onclick="abrirMapa('Ceará-Mirim, RN')">Ver no mapa</button>
           <button class="btn-detalhes" onclick="abrirDetalhes(9)">Ver detalhes</button>
         </div>
-      </div>
+      <!-- ... Copie todos os outros cards aqui (mesma estrutura) ... -->
+      <!-- card teclado, mouse, ram, etc. -->
+
     </div>
-  </section>
-</main>
+</div>
+</div>
+
+  <button class="carousel-btn right"> ▶️ </button>
+</div>
+</div>
+</div>
+</div>
 
 <footer class="rodape">
-    <div class="rodape-conteudo">
-      <p>&copy; 2025 Ciclo Conecta. Todos os direitos reservados.</p>
-      <p>
-        Contato:
-        <a href="mailto:contato@cicloconecta.com">contato@cicloconecta.com</a>
-      </p>
-      <p>Telefone: (84) 90000-0000</p>
-    </div>
-  </footer>
-  
+  <div class="rodape-conteudo">
+    <p>&copy; 2025 Ciclo Conecta. Todos os direitos reservados.</p>
+    <p>Contato: <a href="mailto:contato@cicloconecta.com">contato@cicloconecta.com</a></p>
+    <p>Telefone: (84) 90000-0000</p>
+  </div>
+</footer>
+
 <script>
+
   function abrirMapa(localizacao) {
     const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(localizacao)}`;
     window.open(url, '_blank');
   }
-  
+
   function abrirDetalhes(idProduto) {
-    // Implemente a lógica para abrir os detalhes do produto
-    // Pode ser um modal ou redirecionamento para outra página
     console.log(`Abrindo detalhes do produto ${idProduto}`);
-    // Exemplo: window.location.href = `detalhes.html?id=${idProduto}`;
   }
-</script>
-<script>
+
   const texto = "Uma nova maneira de desapegar";
   const textoElemento = document.getElementById("texto-dinamico");
   let index = 0;
@@ -276,11 +295,40 @@
     if (index < texto.length) {
       textoElemento.innerHTML += texto.charAt(index);
       index++;
-      setTimeout(digitarTexto, 100); // velocidade da digitação
+      setTimeout(digitarTexto, 100);
     }
   }
 
   window.onload = digitarTexto;
+</script>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const leftBtn = document.querySelector('.carousel-btn.left');
+  const rightBtn = document.querySelector('.carousel-btn.right');
+  const cards = document.querySelectorAll('.carousel-track .card');
+  const cardsPerSlide = 3;
+  let currentIndex = 0;
+
+  function updateSlide() {
+    const cardWidth = cards[0].offsetWidth + 20;
+    const offset = currentIndex * cardWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  rightBtn.addEventListener('click', () => {
+    if (currentIndex < cards.length - cardsPerSlide) {
+      currentIndex++;
+      updateSlide();
+    }
+  });
+
+  leftBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlide();
+    }
+  });
 </script>
 </body>
 </html>
