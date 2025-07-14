@@ -186,7 +186,7 @@ body > * {
 
 .card-imagem {
   width: 100%;
-  height: 160px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -211,7 +211,7 @@ body > * {
 .card h3 {
   margin: 0 0 6px;
   color: #333;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -335,6 +335,12 @@ nav#menu a:hover {
   .card-grid {
     grid-template-columns: 1fr; /* 1 card por linha em mobile */
   }
+  @media (max-width:768px){
+    .card{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
   
   .card-imagem {
     height: 140px;
@@ -414,7 +420,7 @@ nav#menu a:hover {
 }
 .carousel-wrapper {
   position: relative;
-  max-width: 1200px;
+  max-width: 1700px;
   margin: 40px auto;
   display: flex;
   align-items: center;
@@ -429,12 +435,15 @@ nav#menu a:hover {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  gap: 20px;
+  gap: 10px;
 }
 
 .card {
-  flex: 0 0 calc(25% - 13.33px); /* 3 por slide */
+  flex: 0 0 calc(20% - 16px); /* 3 por slide */
+  max-width: calc('20% - 16px);');
   box-sizing: border-box;
+  height: 100%;
+
 }
 
 /* Botões de navegação */
@@ -462,4 +471,29 @@ nav#menu a:hover {
 
 .carousel-btn:hover {
   background-color: #008C9E;
+}
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+}
+
+.conteudo-sobreposto {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 20%;
 }

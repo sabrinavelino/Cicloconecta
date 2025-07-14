@@ -10,6 +10,7 @@ urlpatterns = [
     path('hd/', views.hd, name='hd'),
     path('memoria/', views.memoria, name='memoria'),
     path('meus-anuncios/', views.meus_anuncios, name='meus_anuncios'),
-    path('novo-anuncio/', views.novo_anuncio, name='novo_anuncio'),
+    path('perifericos/', views.perifericos, name='perifericos'),
+    path('novo_anuncios/', views.novo_anuncios, name='novo_anuncios'),
     path('usuarios/', include('usuarios.urls')),  
 ]

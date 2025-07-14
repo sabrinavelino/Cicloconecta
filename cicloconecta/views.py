@@ -15,5 +15,8 @@ def memoria(request):
 def meus_anuncios(request):
     return render(request, 'meus-anuncios.html')
 
-def novo_anuncio(request):
-    return render(request, 'novo-anuncio.html')
+def novo_anuncios(request):
+    return render(request, 'novo_anuncios.html')
+
+def perifericos(request):
+    return render(request, 'perifericos.html')

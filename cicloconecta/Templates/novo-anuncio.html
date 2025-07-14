@@ -1,17 +1,51 @@
-{% load static %} 
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Novo Anúncio - Ciclo Conecta</title>
-  <link rel="stylesheet" href="{% static 'css/novo-anuncio.css' %}" />
 
+  <link rel="stylesheet" href="{% static 'css/novo-anuncio.css' %}" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      position: relative;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header id="cabecalho">
     <div class="header-inner">
-      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo" />
+      <img src="{% static 'img/logo.png' %}" alt="Logo Ciclo Conecta" class="logo" />
       <hgroup class="titulos">
         <h1>Ciclo Conecta</h1>
         <h2>Uma nova maneira de desapegar</h2>
@@ -27,7 +61,7 @@
       <input type="text" id="titulo" name="titulo" required />
 
       <label for="descricao">Descrição:</label>
-      <textarea id="descricao" name="descricao" rows="5" required></textarea>
+      <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva as caracteristicas do produto e condição (novo, usado, funcionando ou não)"></textarea>
 
       <label for="preco">Preço (R$):</label>
       <input type="number" id="preco" name="preco" min="0" step="0.01" />
@@ -35,12 +69,12 @@
       <label for="categoria">Categoria:</label>
       <select id="categoria" name="categoria" required>
         <option value="">Selecione</option>
-        <option value="eletronicos">Periféricos</option>
-        <option value="moveis">Memória</option>
-        <option value="veiculos">HD</option>
-        <option value="roupas">Gabinete</option>
-        <option value="outros">Cabos</option>
-        <option value="outros"> Outros</option>
+        <option value="perifericos">Periféricos</option>
+        <option value="memoria">Memória</option>
+        <option value="hd">HD</option>
+        <option value="gabinete">Gabinete</option>
+        <option value="cabos">Cabos</option>
+        <option value="outros">Outros</option>
       </select>
 
       <label for="tipo">Tipo de negociação:</label>
@@ -51,12 +85,40 @@
       </div>
 
       <div id="trocaInfo" style="display: none;">
-        <label for="desejo">O que você aceita na trocar?</label>
-        <textarea id="desejo" name="desejo" rows="3" placeholder="Ex: Aceito bicicleta ou celular..."> </textarea>
+        <label for="desejo">O que você aceita na troca?</label>
+        <textarea id="desejo" name="desejo" rows="3" placeholder="Ex: Aceito teclado mecânico..."></textarea>
       </div>
 
       <label for="fotos">Fotos do produto:</label>
       <input type="file" id="fotos" name="fotos[]" multiple accept="image/*" />
+
+      <label for="cidade">Cidade (RN):</label>
+      <select id="cidade" name="cidade" required>
+        <option value="">Selecione</option>
+        <option>Natal</option>
+        <option>Parnamirim</option>
+        <option>São José de Mipibu</option>
+        <option>São Gonçalo do Amarante</option>
+        <option>Macaiba</option>
+        <option>Nisía Floresta</option>
+        <option>Extremoz</option>
+      </select>
+
+      <label for="rua">Rua:</label>
+      <input type="text" id="rua" name="rua" placeholder="endereço completo, rua e numero" required />
+
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" required />
+
+      <label for="coordenadas">Coordenadas (Latitude, Longitude):</label>
+      <input type="text" id="coordenadas" name="coordenadas" readonly required />
+
+      <div id="mapa" style="height: 300px; margin-bottom: 20px;"></div>
+
+      <label class="check-declaracao">
+        <input type="checkbox" id="checkboxDeclaracao" />
+        Declaro estar ciente da <a href="#" onclick="abrirDeclaracao(event)">autodeclaração ambiental conforme ISO 14021</a>.
+      </label>
 
       <button type="submit">Publicar Anúncio</button>
     </form>
@@ -64,18 +126,57 @@
     <a class="voltar" href="perfil.html">← Voltar para o perfil</a>
   </main>
 
+  <div id="modalDeclaracao" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharDeclaracao()">&times;</span>
+      <h3>Termo de Autodeclaração Ambiental</h3>
+      <p>
+        Declaro, sob minha responsabilidade, que os produtos anunciados seguem os princípios da comunicação ambiental conforme a norma ISO 14021, incluindo a veracidade das informações de reaproveitamento, reciclagem, reuso ou recondicionamento.
+      </p>
+    </div>
+  </div>
+
   <script>
     const tipoRadios = document.getElementsByName('tipo');
     const trocaInfo = document.getElementById('trocaInfo');
+    const checkbox = document.getElementById('checkboxDeclaracao');
 
     tipoRadios.forEach(radio => {
       radio.addEventListener('change', () => {
-        if (radio.value === 'troca' || radio.value === 'ambos') {
-          trocaInfo.style.display = 'block';
-        } else {
-          trocaInfo.style.display = 'none';
-        }
+        trocaInfo.style.display = (radio.value === 'troca' || radio.value === 'ambos') ? 'block' : 'none';
       });
+    });
+
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        abrirDeclaracao();
+      }
+    });
+
+    function abrirDeclaracao(event) {
+      if (event) event.preventDefault();
+      document.getElementById('modalDeclaracao').style.display = 'block';
+    }
+
+    function fecharDeclaracao() {
+      document.getElementById('modalDeclaracao').style.display = 'none';
+    }
+
+    const mapa = L.map('mapa').setView([-5.7945, -35.211], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap',
+    }).addTo(mapa);
+
+    let marcador;
+    mapa.on('click', function (e) {
+      const latlng = e.latlng;
+      document.getElementById('coordenadas').value = `${latlng.lat.toFixed(6)}, ${latlng.lng.toFixed(6)}`;
+      if (marcador) {
+        marcador.setLatLng(latlng);
+      } else {
+        marcador = L.marker(latlng).addTo(mapa);
+      }
     });
   </script>
 </body>

@@ -9,41 +9,45 @@
 </head>
 <body>
   <header id="cabecalho">
-  <div class="header-inner">
-    <div class="logo-titulo">
-      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo" link="main.html">
-      <hgroup class="titulos">
-        <h1>Ciclo Conecta</h1>
-        <h2>Uma nova maneira de desapegar</h2>
-      </hgroup>
-    </div>
+    <div class="header-inner">
+      <div class="logo-titulo">
+        <a href="{% url 'main' %}">
+          <img src="{% static 'img/logo.png' %}" alt="Logo Ciclo Conecta" class="logo">
+        </a>
+        <hgroup class="titulos">
+          <h1>Ciclo Conecta</h1>
+          <h2>Uma nova maneira de desapegar</h2>
+        </hgroup>
+      </div>
 
-    <div class="nav-search-wrapper">
-      <nav id="menu">
-        <ul>
-          <li><a href="perifericos.html">Periféricos</a></li>
-          <li><a href="HD.html">HD</a></li>
-          <li><a href="gabinete.html">Gabinete</a></li>
-          <li><a href="memoria.html">Memória RAM</a></li>
-          <li><a href="fale-conosco.html">Sobre Nós</a></li>
-        </ul>
-      </nav>
+      <div class="nav-search-wrapper">
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'perifericos' %}">Periféricos</a></li>
+            <li><a href="{% url 'hd' %}">HD</a></li>
+            <li><a href="{% url 'gabinete' %}">Gabinete</a></li>
+            <li><a href="{% url 'memoria' %}">Memória RAM</a></li>
+            <li><a href="#">Sobre Nós</a></li> <!-- Atualize depois se criar a view -->
+          </ul>
+        </nav>
 
-      <div class="search-bar">
-        <input type="text" placeholder="Pesquisar..." id="searchInput">
-        <button onclick="pesquisar()">Buscar</button>
+        <div class="search-bar">
+          <input type="text" placeholder="Pesquisar..." id="searchInput">
+          <button onclick="pesquisar()">Buscar</button>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+
   <main>
-    <h2>Gabinetes </h2>
-    <p>Dê nova vida ao seu setup </p>
+    <h2>Gabinetes</h2>
+    <p>Dê nova vida ao seu setup</p>
+
     <section class="lista-produtos">
       <div class="produto-item">
-        <img src="../img/gabinete.png" alt="Memória RAM 2">
+        <img src="{% static 'img/gabinete.png' %}" alt="Gabinete 1">
         <div class="info-produto">
-          <h3>Gabinete </h3>
+          <h3>Gabinete</h3>
           <p class="preco">R$ 100,00</p>
           <p class="localizacao">Natal - RN</p>
           <button>Ver mais</button>
@@ -51,7 +55,7 @@
       </div>
 
       <div class="produto-item">
-        <img src="../img/gabinete2.png" alt="Memória RAM 3">
+        <img src="{% static 'img/gabinete2.png' %}" alt="Gabinete 2">
         <div class="info-produto">
           <h3>Gabinete 5 coolers</h3>
           <p class="preco">R$ 400,00</p>
@@ -61,9 +65,9 @@
       </div>
 
       <div class="produto-item">
-        <img src="../img/gabinete3.png" alt="Memória RAM 4">
+        <img src="{% static 'img/gabinete3.png' %}" alt="Gabinete branco RGB">
         <div class="info-produto">
-          <h3>Gabiente branco RGB 5 núcleos</h3>
+          <h3>Gabinete branco RGB 5 núcleos</h3>
           <p class="preco">R$ 350,00</p>
           <p class="localizacao">Natal - RN</p>
           <button>Ver mais</button>
@@ -71,16 +75,17 @@
       </div>
 
       <div class="produto-item">
-        <img src="../img/gabinete4.png" alt="Memória RAM 4 (Versão 2)">
+        <img src="{% static 'img/gabinete4.png' %}" alt="Gabinete lilás RGB">
         <div class="info-produto">
-          <h3>Gabinete lilas RGB</h3>
+          <h3>Gabinete lilás RGB</h3>
           <p class="preco">R$ 180,00</p>
-          <p class="localizacao">São josé de mipibu - RN</p>
+          <p class="localizacao">São José de Mipibu - RN</p>
           <button>Ver mais</button>
         </div>
       </div>
     </section>
   </main>
+
   <script>
     function pesquisar() {
       const termo = document.getElementById("searchInput").value;

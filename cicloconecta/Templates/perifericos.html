@@ -4,44 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perífericos - Ciclo Conecta</title>
-  <link rel="stylesheet" href="../css/padrao.css">
+  <title>Periféricos - Ciclo Conecta</title>
+  <link rel="stylesheet" href="{% static 'css/padrao.css' %}">
 </head>
 <body>
   <header id="cabecalho">
-  <div class="header-inner">
-    <div class="logo-titulo">
-      <img src="../img/logo.png" alt="Logo Ciclo Conecta" class="logo">
-      <hgroup class="titulos">
-        <h1>Ciclo Conecta</h1>
-        <h2>Uma nova maneira de desapegar</h2>
-      </hgroup>
-    </div>
+    <div class="header-inner">
+      <div class="logo-titulo">
+        <img src="{% static 'img/logo.png' %}" alt="Logo Ciclo Conecta" class="logo">
+        <hgroup class="titulos">
+          <h1>Ciclo Conecta</h1>
+          <h2>Uma nova maneira de desapegar</h2>
+        </hgroup>
+      </div>
 
-    <div class="nav-search-wrapper">
-      <nav id="menu">
-        <ul>
-          <li><a href="perifericos.html">Periféricos</a></li>
-          <li><a href="HD.html">HD</a></li>
-          <li><a href="gabinete.html">Gabinete</a></li>
-          <li><a href="memoria.html">Memória RAM</a></li>
-          <li><a href="fale-conosco.html">Sobre Nós</a></li>
-        </ul>
-      </nav>
+      <div class="nav-search-wrapper">
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'perifericos' %}">Periféricos</a></li>
+            <li><a href="{% url 'hd' %}">HD</a></li>
+            <li><a href="{% url 'gabinete' %}">Gabinete</a></li>
+            <li><a href="{% url 'memoria' %}">Memória RAM</a></li>
+            <li><a href="#">Sobre Nós</a></li> <!-- Atualize quando criar essa rota -->
+          </ul>
+        </nav>
 
-      <div class="search-bar">
-        <input type="text" placeholder="Pesquisar..." id="searchInput">
-        <button onclick="pesquisar()">Buscar</button>
+        <div class="search-bar">
+          <input type="text" placeholder="Pesquisar..." id="searchInput">
+          <button onclick="pesquisar()">Buscar</button>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
+
   <main>
-    <h2>Periféricos </h2>
+    <h2>Periféricos</h2>
     <p>Confira mouses, teclados, webcams e muito mais para reutilização consciente.</p>
+
     <section class="lista-produtos">
       <div class="produto-item">
-        <img src="../img/mouse.png" alt="Memória RAM 2">
+        <img src="{% static 'img/mouse.png' %}" alt="Mouse sem fio">
         <div class="info-produto">
           <h3>Mouse sem fio</h3>
           <p class="preco">R$ 60,00</p>
@@ -51,7 +53,7 @@
       </div>
 
       <div class="produto-item">
-        <img src="../img/mouse3.png" alt="Memória RAM 3">
+        <img src="{% static 'img/mouse3.png' %}" alt="Mouse RGB">
         <div class="info-produto">
           <h3>Mouse RGB</h3>
           <p class="preco">R$ 90,00</p>
@@ -61,7 +63,7 @@
       </div>
 
       <div class="produto-item">
-        <img src="../img/teclado1.jpg" alt="Memória RAM 4">
+        <img src="{% static 'img/teclado1.jpg' %}" alt="Teclado e mouse RGB">
         <div class="info-produto">
           <h3>Teclado e mouse RGB</h3>
           <p class="preco">R$ 120,00</p>
@@ -71,16 +73,17 @@
       </div>
 
       <div class="produto-item">
-        <img src="../img/mouse4.jpeg" alt="Memória RAM 4 (Versão 2)">
+        <img src="{% static 'img/mouse4.jpeg' %}" alt="Mouse sem fio 2">
         <div class="info-produto">
-          <h3>mouse sem fio</h3>
+          <h3>Mouse sem fio</h3>
           <p class="preco">R$ 180,00</p>
-          <p class="localizacao"> Natal - RN</p>
+          <p class="localizacao">Natal - RN</p>
           <button>Ver mais</button>
         </div>
       </div>
     </section>
   </main>
+
   <script>
     function pesquisar() {
       const termo = document.getElementById("searchInput").value;
