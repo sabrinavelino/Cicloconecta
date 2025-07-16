@@ -11,6 +11,10 @@ urlpatterns = [
     path('memoria/', views.memoria, name='memoria'),
     path('meus-anuncios/', views.meus_anuncios, name='meus_anuncios'),
     path('perifericos/', views.perifericos, name='perifericos'),
-    path('novo_anuncios/', views.novo_anuncios, name='novo_anuncios'),
+    path('novo_anuncio/', views.novo_anuncio, name='novo_anuncio'),
+    path('suporte_manutencao/', views.suporte_manutencao, name='suporte_manutencao'),
+    path('pontos_de_coleta/', views.pontos_de_coleta, name='pontos_de_coleta'),
     path('usuarios/', include('usuarios.urls')),  
 ]
+
+

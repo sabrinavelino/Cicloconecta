@@ -21,9 +21,13 @@
     </div>
     <nav class="menu">
       <ul>
-        <li><a href="{% url 'login' %}">LOGIN</a></li>
-        <li><a href="{% url 'cadastro' %}">CADASTRE-SE</a></li>
-        <li><a href="{% url 'novo_anuncios' %}">ANUNCIAR</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'cadastro' %}">Cadastre-se</a></li>
+        <li><a href="{% url 'novo_anuncio' %}">Anunciar</a></li>
+        <li><a href="{% url 'suporte_manutencao' %}">Realizar manutencão</a></li>
+        <li><a href="{% url 'hd' %}">Hd's</a></li>
+        <li><a href="{% url 'gabinete' %}">gabinete</a></li>
+        <li><a href="{% url 'perifericos' %}">perifericos</a></li>
       </ul>
     </nav>
   </div>
@@ -36,7 +40,7 @@
   </video>
   <div class="conteudo-sobreposto">
     <div class="logo-e-frase">
-      <img src="{% static 'img/logo.png' %}" alt="Logo Ciclo Conecta" class="logo-banner">
+
       <h2 class="frase-digitada">
         <span id="texto-dinamico"></span><span class="cursor">|</span>
       </h2>

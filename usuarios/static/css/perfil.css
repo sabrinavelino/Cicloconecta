@@ -195,3 +195,48 @@ body {
   color: inherit;
   gap: 12px;
 }
+
+@media (max-width: 768px) {
+    .header-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pagina-editar {
+      padding: 25px;
+      margin: 20px 15px;
+    }
+
+    .titulos h1 {
+      font-size: 22px;
+    }
+
+    .titulos h2 {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo {
+      height: 40px;
+    }
+
+    .pagina-editar {
+      padding: 20px;
+    }
+
+    .pagina-editar h2 {
+      font-size: 20px;
+    }
+
+    .pagina-editar input,
+    .pagina-editar textarea {
+      font-size: 14px;
+    }
+
+    .pagina-editar button {
+      font-size: 14px;
+      padding: 12px;
+    }
+  }

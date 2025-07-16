@@ -135,3 +135,77 @@ button:hover {
   text-decoration: none;
   color: inherit;
 }
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .form-container {
+    padding: 60px;
+    margin-top: 200px;
+    max-width: 90%;
+  }
+
+  .logo-titulo .titulo {
+    font-size: 20px;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    justify-content: flex-start;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .header {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .cabecalho1 {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo-titulo {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo-titulo img {
+    height: 50px;
+  }
+
+  .logo-titulo .titulo {
+    font-size: 20px;
+  }
+
+  .form-container {
+    padding: 30px 20px;
+    margin-top: 100px;
+    max-width: 100%;
+    box-shadow: 0px 0px 6px black;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #mensagem {
+    font-size: 14px;
+  }
+}
